@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Expenses from "./components/expenses/Expenses";
+import NewExpense from './components/inputForm/NewExpense';
 
 function App() {
 
@@ -12,8 +13,8 @@ function App() {
   }
 
   function generateRandomDate() {
-    const from = new Date(22,10,2000);
-    const to = new Date();
+    const from = new Date(1,1,2019);
+    const to = new Date(31,12,2023);
 
     return new Date(
       from.getTime() +
@@ -35,11 +36,18 @@ function App() {
       return result;
   }
 
+  
+  function addExpenseHandler(returnedExpenseData) {
+    console.log("App changed");
+    console.log(returnedExpenseData);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
+          <NewExpense onAddExpense={addExpenseHandler}/>
           <Expenses expenses={expenses} />
         </p>
         <a
