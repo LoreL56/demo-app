@@ -1,6 +1,5 @@
 import './ExpenseDate.css';
 
-//qui uso destructuring
 function ExpenseDate({date}) {
   
   const day = date.toLocaleString('en-US',{day: '2-digit'});
